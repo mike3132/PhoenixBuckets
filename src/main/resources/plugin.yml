@@ -1,0 +1,12 @@
+name: PhoenixBuckets
+version: '${project.version}'
+main: net.resolutemc.phoenixbuckets.Main
+api-version: 1.19
+authors: [ Mike3132 ]
+description: ResoluteMC custom buckets plugin
+website: www.resolutemc.net
+commands:
+  InfiniteBuckets:
+    description: Main bucket command
+    permission: InfiniteBuckets.Command
+    aliases: ib
