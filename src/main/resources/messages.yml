@@ -11,25 +11,9 @@
 #Plugin prefix is sent before ALL messages in the plugin.
 Messages:
   #Plugin prefix for all messages.
-  Prefix: '&4Phoenix &6Tools &7> '
+  Prefix: '&4Phoenix &5Buckets &7> '
 
-  #If they don't have permission to use /InfiniteBuckets command
-  No-permission-Placeholder: '&4&lERROR: &cYou do not have permission to execute this command'
 
-  #If they don't have permission to use /InfiniteBuckets reload
-  No-reload-permission: '&cYou cannot reload the plugin configuration files'
-
-  #If they don't have permission to use /InfiniteBuckets give
-  No-give-permission: '&4You do not have permission to give out Infinite Buckets'
-
-  #Message that is sent to the player if their inventory is full
-  Your-inventory-is-full: '&bSorry but it looks like your inventory is full. &dYour items have been dropped on the ground'
-
-  #Message that is sent to the player when they are given a Infinite water bucket
-  You-have-been-given-a-water-bucket: '&3You have been given an &f&ka&3Infinite &bWater &3Bucket&f&ka'
-
-  #Message that is sent to the player when they are given a Infinite lava bucket
-  You-have-been-given-a-lava-bucket: '&cYou have been given an &7&ka&cInfinite &4Lava &cBucket&7&ka'
 
   #➳➳➳➳➳ Admin Messages ➳➳➳➳➳
 
@@ -40,16 +24,7 @@ Messages:
   Player-not-found-message-placeholder: '&4Player not found'
 
   #Message that is sent to the Admin they didn't select a player
-  Please-select-a-player: '&3Please use /InfiniteBuckets give <Playername>'
+  Please-select-a-player: '&3Please use /Bucket give <Playername>'
 
   #Message that is sent as the default message when no Command arguments are given but the player has InfiniteBuckets.Admin permission
-  Help-Trigger: '&4ERROR: &cNot enough command argumenets. &ePlease use /InfiniteBuckets help'
-
-  #This is the admin help menu. (This runs A->Z)
-  Help-Header: '&e----- &a[&cInfinite Buckets&a] &e-----'
-  Help-A: '&6&lHelp menu'
-  Help-B: '&6To get back here use /InfiniteBuckets help'
-  Help-C: '&6/InfiniteBuckets reload &7-> &eReloads plugin configuration files'
-  Help-D: '&6/InfiniteBuckets give <playerName> <Water> &7-> &eGives the selected player a Infinite water bucket'
-  Help-E: '&6/InfiniteBuckets give <playerName> <Lava> &7-> &eGives the selected player a Infinite lava bucket'
-  Help-Footer: '&e----- &a[&cInfinite Buckets&a] &e-----'
+  Help-Trigger: '&4ERROR: &cNot enough command argumenets. &ePlease use /Bucket help'

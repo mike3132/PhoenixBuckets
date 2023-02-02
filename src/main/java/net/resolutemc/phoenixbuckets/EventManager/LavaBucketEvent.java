@@ -1,17 +1,18 @@
 package net.resolutemc.phoenixbuckets.EventManager;
 
-import net.resolutemc.phoenixbuckets.ItemManager.LavaBucket;
+import net.resolutemc.phoenixbuckets.Main;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
 
 public class LavaBucketEvent implements Listener {
 
-
+    NamespacedKey key = new NamespacedKey(Main.plugin, "Lava-Bucket-Key");
     @EventHandler
     public void onWaterPlace(PlayerBucketEmptyEvent peb) {
         Player player = peb.getPlayer();
@@ -19,9 +20,9 @@ public class LavaBucketEvent implements Listener {
         int blockX = block.getX();
         int blockY = block.getY();
         int blockZ = block.getZ();
-        LavaBucket lavaBucketItem = new LavaBucket();
-        ItemStack lavaBucket = lavaBucketItem.getLavaBucket();
-        if (player.getInventory().getItemInMainHand().isSimilar(lavaBucket)) {
+        if (!player.getInventory().getItemInMainHand().equals(Material.LAVA_BUCKET)) return;
+
+        if (player.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().has(key, PersistentDataType.STRING)) {
             player.getWorld().getBlockAt(blockX, blockY, blockZ).setType(Material.LAVA);
             peb.setCancelled(true);
         }

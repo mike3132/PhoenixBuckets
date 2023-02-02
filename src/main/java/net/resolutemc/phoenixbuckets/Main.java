@@ -2,17 +2,12 @@ package net.resolutemc.phoenixbuckets;
 
 import net.resolutemc.phoenixbuckets.CommandManager.BucketCommand;
 import net.resolutemc.phoenixbuckets.CommandManager.TabComplete;
+import net.resolutemc.phoenixbuckets.ConfigManager.ConfigCreator;
 import net.resolutemc.phoenixbuckets.EventManager.LavaBucketEvent;
 import net.resolutemc.phoenixbuckets.EventManager.WaterBucketEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.io.File;
-import java.io.IOException;
 
 public final class Main extends JavaPlugin {
 
@@ -31,7 +26,7 @@ public final class Main extends JavaPlugin {
         // Config loaders
         saveDefaultConfig();
         getConfig();
-        createFile();
+        ConfigCreator.MESSAGES.create();
 
         // Command loaders
         registerBucketCommand();
@@ -61,21 +56,4 @@ public final class Main extends JavaPlugin {
         new TabComplete();
     }
 
-    // File creation
-    private File messages;
-    private FileConfiguration config;
-
-    private void createFile() {
-        messages = new File(getDataFolder(), "messages.yml");
-        if (!messages.exists()) {
-            messages.getParentFile().mkdirs();
-            saveResource("messages.yml", false);
-        }
-        config = new YamlConfiguration();
-        try {
-            config.load(messages);
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
-    }
 }

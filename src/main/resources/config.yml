@@ -9,9 +9,9 @@ ConfigVersion: '1.0'
 ##### WARNING: DO NOT CHANGE ANYTHING ABOVE THIS LINE IT WILL BREAK THE PLUGIN!#####
 
 #✍✍✍✍✍Permissions✍✍✍✍✍
-#InfiniteBuckets.Command > Access to /InfiniteBuckets command
-#InfiniteBuckets.Reload > Access to reload the plugin configs and messages files
-#InfiniteBuckets.Give > Access to giving InfiniteBuckets
+#PhoenixBuckets.Command > Access to /InfiniteBuckets command
+#PhoenixBuckets.Reload > Access to reload the plugin configs and messages files
+#PhoenixBuckets.Give > Access to giving InfiniteBuckets
 #✍✍✍✍✍Permissions✍✍✍✍✍
 
 

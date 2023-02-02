@@ -6,7 +6,5 @@ authors: [ Mike3132 ]
 description: ResoluteMC custom buckets plugin
 website: www.resolutemc.net
 commands:
-  InfiniteBuckets:
+  Bucket:
     description: Main bucket command
-    permission: InfiniteBuckets.Command
-    aliases: ib
