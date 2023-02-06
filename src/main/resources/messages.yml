@@ -13,18 +13,33 @@ Messages:
   #Plugin prefix for all messages.
   Prefix: '&4Phoenix &5Buckets &7> '
 
+  #➳➳➳➳➳ Player Messages ➳➳➳➳➳
+
+  #Message that is sent if the player doesn't have permission to use a command
+  No-Permission-Placeholder: "&4ERROR: &cYou do not have permission to use that command."
+
+  #Message that is sent if the players inventory is full.
+  Player-Inventory-Full-Placeholder: "&cYour inventory is full. Your bucket has been dropped on the ground"
+
+
 
 
   #➳➳➳➳➳ Admin Messages ➳➳➳➳➳
 
-  #Message that is sent if the Admin dosn't select a type of bucket
-  Please-select-either-water-or-lava: '&6Please select either &bWater &6or &4Lava'
+  #The current bucket types
+  Bucket-List-Placeholder: "&4Lava &7|| &bWater"
 
-  #Message that is sent to the Admin if the player dosn't exist or is not online
-  Player-not-found-message-placeholder: '&4Player not found'
+  #Message that is sent if they type anything that isn't a player name
+  Player-Not-Exist-Placeholder: "&4ERROR: &cThat is not a player"
 
-  #Message that is sent to the Admin they didn't select a player
-  Please-select-a-player: '&3Please use /Bucket give <Playername>'
+  #Message that is sent to the Admin if the player doesn't exist or is not online
+  Player-not-found-message-placeholder: '&4ERROR: &cPlayer not found'
 
-  #Message that is sent as the default message when no Command arguments are given but the player has InfiniteBuckets.Admin permission
-  Help-Trigger: '&4ERROR: &cNot enough command argumenets. &ePlease use /Bucket help'
+  #Message that is sent to the Admin they didn't select give for the first command argument
+  Not-Give-Placeholder: '&4ERROR: &cPlease use /bucket give.'
+
+  #Message that is sent if they type anything that isn't a valid bucket
+  Not-Valid-Bucket-Placeholder: "&4ERROR: &cThat is not a valid bucket. &7Please use /bucket list."
+
+  #Message that is sent to the admin when giving a bucket to a player
+  Player-Give-Bucket-Placeholder: "&7You have given a bucket to &3%player_name%"

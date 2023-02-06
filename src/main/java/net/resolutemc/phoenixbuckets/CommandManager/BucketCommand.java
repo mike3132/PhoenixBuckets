@@ -1,5 +1,6 @@
 package net.resolutemc.phoenixbuckets.CommandManager;
 
+import net.resolutemc.phoenixbuckets.ChatManager.ChatMessages;
 import net.resolutemc.phoenixbuckets.GiveManager.BucketFactory;
 import net.resolutemc.phoenixbuckets.Main;
 import org.bukkit.Bukkit;
@@ -22,7 +23,7 @@ public class BucketCommand implements CommandExecutor {
         }
         if (args[0].equalsIgnoreCase("Reload")) {
             if (!sender.hasPermission("phoenixBuckets.Reload")) {
-                sender.sendMessage("No-Permission-Placeholder");
+                ChatMessages.sendConsoleMessage(sender, "No-Permission-Placeholder");
                 return false;
             }
             sender.sendMessage(Main.chatColor("&4Phoenix &5Buckets &7> &aPlugin config reloaded in &2" + String.valueOf(System.currentTimeMillis() -1) + "&ams"));
@@ -31,36 +32,36 @@ public class BucketCommand implements CommandExecutor {
         }
         if (args[0].equalsIgnoreCase("List")) {
             if (!sender.hasPermission("phoenixTools.List")) {
-                sender.sendMessage("No-Permission-Placeholder");
+                ChatMessages.sendConsoleMessage(sender, "No-Permission-Placeholder");
                 return false;
             }
-            sender.sendMessage("Bucket-List-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Bucket-List-Placeholder");
             return false;
         }
         if (!sender.hasPermission("phoenixTools.Give")) {
-            sender.sendMessage("No-Permission-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "No-Permission-Placeholder");
             return false;
         }
         if (!args[0].equalsIgnoreCase("Give")) {
-            sender.sendMessage("Not-Give-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Not-Give-Placeholder");
             return false;
         }
         if (args.length < 2) {
-            sender.sendMessage("Not-Player-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Player-Not-Exist-Placeholder");
             return false;
         }
         Player target = Bukkit.getPlayer(args[1]);
         if (target == null) {
-            sender.sendMessage("Player-Not-Found-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Player-not-found-message-placeholder");
             return false;
         }
         if (args.length < 3) {
-            sender.sendMessage("Not-Bucket-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Not-Valid-Bucket-Placeholder");
             return false;
         }
         ItemStack item = BucketFactory.getItem(args[2]);
         if (item == null) {
-            sender.sendMessage("Tool-Not-Found-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Not-Valid-Bucket-Placeholder");
             return false;
         }
         int amount = 1;
@@ -69,11 +70,12 @@ public class BucketCommand implements CommandExecutor {
         }
         for (int i = 0; i < amount; i++ ) {
             if (target.getInventory().firstEmpty() == -1) {
-                sender.sendMessage("Player-Inventory-Full-Placeholder");
+                ChatMessages.sendConsoleMessage(sender, "Player-Give-Bucket-Placeholder");
+                ChatMessages.sendPlayerMessage(target, "Player-Inventory-Full-Placeholder");
                 target.getLocation().getWorld().dropItem(target.getLocation(), item);
                 return false;
             }
-            sender.sendMessage("Player-Give-Bucket-Placeholder");
+            ChatMessages.sendConsoleMessage(sender, "Player-Give-Bucket-Placeholder");
             target.getInventory().addItem(item);
         }
 

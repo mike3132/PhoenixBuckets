@@ -22,4 +22,5 @@ public class ChatMessages {
         String message = configMessages.getString("Messages.Prefix") + configMessages.getString("Messages." + key);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
+
 }
