@@ -70,12 +70,14 @@ public class BucketCommand implements CommandExecutor {
         }
         for (int i = 0; i < amount; i++ ) {
             if (target.getInventory().firstEmpty() == -1) {
-                ChatMessages.sendConsoleMessage(sender, "Player-Give-Bucket-Placeholder");
+                ChatMessages.sendConsoleMessageWithPlayerPlaceholder(sender, "Player-Give-Bucket-Placeholder", target.getName());
                 ChatMessages.sendPlayerMessage(target, "Player-Inventory-Full-Placeholder");
+                ChatMessages.sendPlayerMessage(target, "Player-Given-Bucket-Placeholder");
                 target.getLocation().getWorld().dropItem(target.getLocation(), item);
                 return false;
             }
-            ChatMessages.sendConsoleMessage(sender, "Player-Give-Bucket-Placeholder");
+            ChatMessages.sendConsoleMessageWithPlayerPlaceholder(sender, "Player-Give-Bucket-Placeholder", target.getName());
+            ChatMessages.sendPlayerMessage(target, "Player-Given-Bucket-Placeholder");
             target.getInventory().addItem(item);
         }
 

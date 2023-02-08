@@ -16,6 +16,15 @@ public class ChatMessages {
         String message = configMessages.getString("Messages.Prefix") + configMessages.getString("Messages." + key);
         commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
+
+    public static void sendConsoleMessageWithPlayerPlaceholder(CommandSender commandSender, String key, String target) {
+        File messagesConfig = new File(Main.plugin.getDataFolder(), "messages.yml");
+        YamlConfiguration configMessages = YamlConfiguration.loadConfiguration(messagesConfig);
+        String message = configMessages.getString("Messages.Prefix") + configMessages.getString("Messages." + key);
+        message = message.replace("%playerName%", target);
+        commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+    }
+
     public static void sendPlayerMessage(Player player, String key) {
         File messagesConfig = new File(Main.plugin.getDataFolder(), "messages.yml");
         YamlConfiguration configMessages = YamlConfiguration.loadConfiguration(messagesConfig);

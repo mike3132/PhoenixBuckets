@@ -21,7 +21,11 @@ Messages:
   #Message that is sent if the players inventory is full.
   Player-Inventory-Full-Placeholder: "&cYour inventory is full. Your bucket has been dropped on the ground"
 
+  #Message that is sent to the player when they are given a bucket
+  Player-Given-Bucket-Placeholder: "&7You been have given a bucket"
 
+  #Message that is sent to the player if they try and use a water bucket in the nether
+  Player-Use-Blacklisted-World-Placeholder: "&7You cannot use an infinite bucket in this world"
 
 
   #➳➳➳➳➳ Admin Messages ➳➳➳➳➳
@@ -42,4 +46,4 @@ Messages:
   Not-Valid-Bucket-Placeholder: "&4ERROR: &cThat is not a valid bucket. &7Please use /bucket list."
 
   #Message that is sent to the admin when giving a bucket to a player
-  Player-Give-Bucket-Placeholder: "&7You have given a bucket to &3%player_name%"
+  Player-Give-Bucket-Placeholder: "&7You have given a bucket to &3%playerName%"
